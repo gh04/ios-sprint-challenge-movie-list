@@ -36,10 +36,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSN-1N-2Ce">
-                                                    <rect key="frame" x="256" y="20" width="99" height="30"/>
+                                                    <rect key="frame" x="295" y="20" width="99" height="30"/>
                                                     <state key="normal" title="Seen/NotSeen"/>
                                                     <connections>
-                                                        <action selector="hasBeenSeenButton:" destination="wNd-NV-glA" eventType="touchUpInside" id="TdS-J8-lqY"/>
+                                                        <action selector="hasBeenSeenButton:" destination="wNd-NV-glA" eventType="touchUpInside" id="7MV-6K-dxb"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -75,7 +75,7 @@
                     <navigationItem key="navigationItem" title="Movie List" id="NZa-Re-6lW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="X9f-pQ-mBv">
                             <connections>
-                                <segue destination="suf-7a-kSW" kind="show" identifier="AddMovieSegue" id="JdV-s1-fvv"/>
+                                <segue destination="suf-7a-kSW" kind="show" identifier="AddMovieSegue" id="RSy-Kd-ohD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -90,6 +90,7 @@
         <!--Add Movies View Controller-->
         <scene sceneID="YN2-72-ldM">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9k9-7N-Hnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="suf-7a-kSW" customClass="AddMoviesViewController" customModule="Movie_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Imz-vQ-X63">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -100,6 +101,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="suf-7a-kSW" id="A1w-ti-Q7a"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a New Movie to the list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc6-tL-Hu0">
                                 <rect key="frame" x="20" y="108" width="374" height="21"/>
@@ -111,7 +115,8 @@
                                 <rect key="frame" x="170.5" y="177" width="73" height="30"/>
                                 <state key="normal" title="Add Movie"/>
                                 <connections>
-                                    <action selector="addMovieButton:" destination="suf-7a-kSW" eventType="primaryActionTriggered" id="pH5-56-GKq"/>
+                                    <action selector="addMovieButton:" destination="suf-7a-kSW" eventType="primaryActionTriggered" id="XSi-Mi-Y04"/>
+                                    <action selector="addMovieButton:" destination="suf-7a-kSW" eventType="touchUpInside" id="gKC-Fm-76v"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -132,7 +137,6 @@
                         <outlet property="newMovieTextField" destination="kLU-p8-E3s" id="tjr-t2-avP"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9k9-7N-Hnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1882.608695652174" y="8.7053571428571423"/>
         </scene>

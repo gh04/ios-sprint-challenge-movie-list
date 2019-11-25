@@ -26,8 +26,11 @@ class AddMoviesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func addMovieButton(_ sender: UIButton) {
-        guard let newMovie = newMovieTextField.text,
+    
+
+    @IBAction func addMovieButton(_ sender: Any) {
+    
+    guard let newMovie = newMovieTextField.text,
             !newMovie.isEmpty else { return }
         
         var movie = Movie(name: [], hasBeenSeen: false)
@@ -38,6 +41,7 @@ class AddMoviesViewController: UIViewController {
         }
         
         delegate?.movieWasAdded(movie)
+        dismiss(animated: true, completion: nil)
     }
     
 }

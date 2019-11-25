@@ -8,10 +8,26 @@
 
 import UIKit
 
+protocol  ToggleSeen {
+    func isToggleTapped(cell: MovieTableViewCell)
+}
+
 class MovieTableViewCell: UITableViewCell {
 
-    @IBAction func hasBeenSeenButton(_ sender: Any) {
+    
+    var delegate: ToggleSeen?
+    
+    @IBAction func hasBeenSeenButton(_ sender: UIButton) {
+        
+        delegate?.isToggleTapped(cell: self)
+        
+        if movie?.hasBeenSeen == true {
+            sender.setTitle("Seen", for: .highlighted)
+        } else {
+            sender.setTitle("Not Seen", for: .normal)
+        }
     }
+    
     @IBOutlet weak var movieLabel: UILabel!
 
     var movie: Movie? {
@@ -23,7 +39,7 @@ class MovieTableViewCell: UITableViewCell {
     private func updateViews() {
         guard let movie = movie else { return }
         
-        movieLabel.text = "\(movie.name)"
+        movieLabel.text = ("\(movie.name)")
     }
     
 }
