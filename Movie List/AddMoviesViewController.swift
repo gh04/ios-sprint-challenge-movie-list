@@ -30,8 +30,13 @@ class AddMoviesViewController: UIViewController {
         guard let newMovie = newMovieTextField.text,
             !newMovie.isEmpty else { return }
         
-        var movie = Movie(name: newMovie, hasBeenSeen: false)
-     
+        var movie = Movie(name: [], hasBeenSeen: false)
+        
+        if let newMovie = newMovieTextField.text,
+            !newMovie.isEmpty {
+            movie.name.append(newMovie)
+        }
+        
         delegate?.movieWasAdded(movie)
     }
     
