@@ -11,8 +11,8 @@ import UIKit
 class MovieTableViewConroller: UIViewController {
 
 
+
     @IBOutlet weak var tableView: UITableView!
-    
     var movies: [Movie] = []
     
     
@@ -24,6 +24,7 @@ class MovieTableViewConroller: UIViewController {
         }
     }
 }
+
 
 
 extension MovieTableViewConroller: UITableViewDataSource {

@@ -13,23 +13,12 @@ protocol  ToggleSeen {
 }
 
 class MovieTableViewCell: UITableViewCell {
-
     
     var delegate: ToggleSeen?
     
-    @IBAction func hasBeenSeenButton(_ sender: UIButton) {
-        
-        delegate?.isToggleTapped(cell: self)
-        
-        if movie?.hasBeenSeen == true {
-            sender.setTitle("Seen", for: .highlighted)
-        } else {
-            sender.setTitle("Not Seen", for: .normal)
-        }
-    }
-    
-    @IBOutlet weak var movieLabel: UILabel!
 
+    @IBOutlet weak var movieLabel: UILabel!
+    
     var movie: Movie? {
         didSet {
             updateViews()
@@ -41,5 +30,16 @@ class MovieTableViewCell: UITableViewCell {
         
         movieLabel.text = ("\(movie.name)")
     }
-    
+  
+    @IBAction func hasBeenSeen(_ sender: UIButton) {
+        
+        delegate?.isToggleTapped(cell: self)
+        if movie?.hasBeenSeen == true {
+            sender.setTitle("Not Seen", for: .highlighted)
+        } else {
+            sender.setTitle("Seen", for: .normal)
+        }
+    }
 }
+
+

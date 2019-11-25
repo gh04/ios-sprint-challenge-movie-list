@@ -16,6 +16,7 @@ class AddMoviesViewController: UIViewController {
     
     @IBOutlet weak var newMovieTextField: UITextField!
     
+    
     var delegate: AddMovieDelegate?
     
     override func viewDidLoad() {
@@ -27,23 +28,19 @@ class AddMoviesViewController: UIViewController {
     }
     
     
-
     @IBAction func addMovieButton(_ sender: Any) {
+    
     
     guard let newMovie = newMovieTextField.text,
             !newMovie.isEmpty else { return }
         
         var movie = Movie(name: [], hasBeenSeen: false)
-        
-        if let newMovie = newMovieTextField.text,
-            !newMovie.isEmpty {
-            movie.name.append(newMovie)
-        }
-        
-        delegate?.movieWasAdded(movie)
-        dismiss(animated: true, completion: nil)
-    }
+//       if let newMovie = newMovieTextField.text,
+//            !newMovie.isEmpty {
+        movie.name.append(newMovie)
     
+        delegate?.movieWasAdded(movie)
+    }
 }
 
 extension AddMoviesViewController: UITextFieldDelegate {

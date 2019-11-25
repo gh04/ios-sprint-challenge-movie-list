@@ -36,10 +36,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSN-1N-2Ce">
-                                                    <rect key="frame" x="295" y="20" width="99" height="30"/>
-                                                    <state key="normal" title="Seen/NotSeen"/>
+                                                    <rect key="frame" x="330" y="20" width="64" height="30"/>
+                                                    <state key="normal" title="Not Seen"/>
                                                     <connections>
-                                                        <action selector="hasBeenSeenButton:" destination="wNd-NV-glA" eventType="touchUpInside" id="7MV-6K-dxb"/>
+                                                        <action selector="hasBeenSeen:" destination="wNd-NV-glA" eventType="touchUpInside" id="Sbx-Jn-rQf"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -52,14 +52,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="SeenNotSeen" destination="wSN-1N-2Ce" id="1qj-SK-lR4"/>
-                                            <outlet property="hasBeenSeenButton" destination="wSN-1N-2Ce" id="fuh-UX-NTb"/>
-                                            <outlet property="movieLabel" destination="thB-sU-4ss" id="22E-Oq-m3T"/>
+                                            <outlet property="movieLabel" destination="thB-sU-4ss" id="rWt-Sn-toV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="vES-C6-d1B" id="BgB-fV-Yyt"/>
+                                    <outlet property="dataSource" destination="vES-C6-d1B" id="l8k-Ct-rew"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -75,29 +73,28 @@
                     <navigationItem key="navigationItem" title="Movie List" id="NZa-Re-6lW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="X9f-pQ-mBv">
                             <connections>
-                                <segue destination="suf-7a-kSW" kind="show" identifier="AddMovieSegue" id="RSy-Kd-ohD"/>
+                                <segue destination="suf-7a-kSW" kind="showDetail" identifier="AddMovieSegue" id="M28-1L-wM2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="793-pP-5DB" id="Hxy-40-4pT"/>
+                        <outlet property="tableView" destination="793-pP-5DB" id="ySv-tD-MRb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbn-Bh-oKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871.20000000000005" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="871.01449275362324" y="-0.6696428571428571"/>
         </scene>
         <!--Add Movies View Controller-->
         <scene sceneID="YN2-72-ldM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9k9-7N-Hnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="suf-7a-kSW" customClass="AddMoviesViewController" customModule="Movie_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Imz-vQ-X63">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Movie" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kLU-p8-E3s">
-                                <rect key="frame" x="20" y="137" width="374" height="30"/>
+                                <rect key="frame" x="20" y="93" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -106,17 +103,16 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a New Movie to the list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc6-tL-Hu0">
-                                <rect key="frame" x="20" y="108" width="374" height="21"/>
+                                <rect key="frame" x="20" y="64" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWY-5I-pAA">
-                                <rect key="frame" x="170.5" y="177" width="73" height="30"/>
+                                <rect key="frame" x="170.5" y="133" width="73" height="30"/>
                                 <state key="normal" title="Add Movie"/>
                                 <connections>
-                                    <action selector="addMovieButton:" destination="suf-7a-kSW" eventType="primaryActionTriggered" id="XSi-Mi-Y04"/>
-                                    <action selector="addMovieButton:" destination="suf-7a-kSW" eventType="touchUpInside" id="gKC-Fm-76v"/>
+                                    <action selector="addMovieButton:" destination="suf-7a-kSW" eventType="touchUpInside" id="Akg-Eg-fhe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -134,9 +130,10 @@
                         <viewLayoutGuide key="safeArea" id="8ke-g7-fl9"/>
                     </view>
                     <connections>
-                        <outlet property="newMovieTextField" destination="kLU-p8-E3s" id="tjr-t2-avP"/>
+                        <outlet property="newMovieTextField" destination="kLU-p8-E3s" id="KTq-Ds-Q93"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9k9-7N-Hnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1882.608695652174" y="8.7053571428571423"/>
         </scene>
