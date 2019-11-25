@@ -31,15 +31,15 @@ class AddMoviesViewController: UIViewController {
     @IBAction func addMovieButton(_ sender: Any) {
     
     
-    guard let newMovie = newMovieTextField.text,
-            !newMovie.isEmpty else { return }
+        guard let newMovie = newMovieTextField.text else { return }
+//            !newMovie.isEmpty else { return }
         
-        var movie = Movie(name: [], hasBeenSeen: false)
+        var movie1 = Movie(name: newMovie, hasBeenSeen: false)
 //       if let newMovie = newMovieTextField.text,
 //            !newMovie.isEmpty {
-        movie.name.append(newMovie)
+//        movie1.name.append(newMovie)
     
-        delegate?.movieWasAdded(movie)
+        delegate?.movieWasAdded(movie1)
     }
 }
 
