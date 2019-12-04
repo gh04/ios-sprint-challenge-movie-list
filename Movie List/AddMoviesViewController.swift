@@ -34,7 +34,7 @@ class AddMoviesViewController: UIViewController {
         guard let newMovie = newMovieTextField.text else { return }
 //            !newMovie.isEmpty else { return }
         
-        var movie1 = Movie(name: newMovie, hasBeenSeen: false)
+        let movie1 = Movie(name: newMovie, hasBeenSeen: false)
 //       if let newMovie = newMovieTextField.text,
 //            !newMovie.isEmpty {
 //        movie1.name.append(newMovie)
