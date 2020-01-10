@@ -17,6 +17,7 @@ class MovieTableViewCell: UITableViewCell {
     var delegate: ToggleSeen?
     
 
+    @IBOutlet weak var hasSeenButton: UIButton!
     @IBOutlet weak var movieLabel: UILabel!
     
     var movie: Movie? {
@@ -29,17 +30,14 @@ class MovieTableViewCell: UITableViewCell {
         guard let movie = movie else { return }
         
         movieLabel.text = ("\(movie.name)")
+        let hasSeenTitle = movie.hasBeenSeen ? "Seen" : "Not Seen"
+        hasSeenButton.setTitle(hasSeenTitle, for: [])
     }
   
     @IBAction func hasBeenSeen(_ sender: UIButton) {
         
         delegate?.isToggleTapped(cell: self)
-        if movie?.hasBeenSeen == true {
-            sender.setTitle("Not Seen", for: .highlighted)
-        } else {
-            sender.setTitle("Seen", for: .normal)
-        }
-    }
+        
 }
-
+}
 

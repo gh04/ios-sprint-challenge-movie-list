@@ -15,6 +15,10 @@ class MovieTableViewConroller: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var movies: [Movie] = []
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           if segue.identifier == "AddMovieSegue" {
@@ -38,6 +42,7 @@ extension MovieTableViewConroller: UITableViewDataSource {
             
             let movie = movies[indexPath.row]
             cell.movie = movie
+            cell.delegate = self
             
             return cell
         }
@@ -54,4 +59,15 @@ extension MovieTableViewConroller: AddMovieDelegate {
         tableView.reloadData()
         
     }
+}
+
+extension MovieTableViewConroller: ToggleSeen {
+    func isToggleTapped(cell: MovieTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell)  else { return }
+        var movie = movies[indexPath.row]
+        movie.hasBeenSeen = !movie.hasBeenSeen
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
+    
 }
