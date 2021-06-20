@@ -10,6 +10,12 @@ import UIKit
 
 class MovieTableViewCell: UITableViewCell {
 
-  
+    var movie: Movie? {
+        didSet {
+            
+        }
+    }
+    
+    
 
 }
