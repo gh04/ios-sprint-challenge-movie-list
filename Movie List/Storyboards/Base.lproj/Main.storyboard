@@ -29,8 +29,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjn-7Q-s9y">
-                                                    <rect key="frame" x="385" y="8" width="35" height="37.333333333333336"/>
-                                                    <state key="normal" title="Seen"/>
+                                                    <rect key="frame" x="356" y="8" width="64" height="37.333333333333336"/>
+                                                    <state key="normal" title="Not Seen"/>
+                                                    <state key="disabled" title="Not Seen"/>
+                                                    <state key="selected" title="Seen"/>
                                                     <connections>
                                                         <action selector="seenButton:" destination="9zx-qc-StJ" eventType="touchUpInside" id="Gj4-st-qAH"/>
                                                     </connections>
