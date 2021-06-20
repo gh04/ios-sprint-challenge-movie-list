@@ -29,10 +29,10 @@ class MovieViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "AddMovieShowSegue" {
-            guard let addMovieVC = segue.destination as? AddMovieViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
             
-            let movie = movies[indexPath.row]
-            addMovieVC.movie = movie
+            guard let addMovieVC = segue.destination as? AddMovieViewController else { return }
+            
+            addMovieVC.delegate = self
             
         }
     }
@@ -56,7 +56,14 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
      
     }
-    
+}
+
+extension MovieViewController: AddMovieDelegate {
+    func movieWasAdded(_ movie: Movie) {
+        movies.append(movie)
+        dismiss(animated: true, completion: nil)
+        tableView.reloadData()
+    }
     
     
 }

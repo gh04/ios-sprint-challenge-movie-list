@@ -10,5 +10,5 @@ import Foundation
 
 struct Movie {
     let name: String
-    let seen: Bool = false
+    var seen: Bool = false
 }

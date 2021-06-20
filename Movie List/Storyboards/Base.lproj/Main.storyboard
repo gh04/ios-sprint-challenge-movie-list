@@ -31,6 +31,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjn-7Q-s9y">
                                                     <rect key="frame" x="385" y="8" width="35" height="37.333333333333336"/>
                                                     <state key="normal" title="Seen"/>
+                                                    <connections>
+                                                        <action selector="seenButton:" destination="9zx-qc-StJ" eventType="touchUpInside" id="Gj4-st-qAH"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBb-GU-JSS">
                                                     <rect key="frame" x="8" y="8" width="73.333333333333329" height="37.333333333333336"/>
@@ -49,6 +52,9 @@
                                                 <constraint firstItem="PBb-GU-JSS" firstAttribute="leading" secondItem="BYL-Vv-dVW" secondAttribute="leading" constant="8" id="doT-XN-oB1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="movieLabel" destination="PBb-GU-JSS" id="BwD-mE-uTD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -102,6 +108,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9Z-Lz-Lgp">
                                         <rect key="frame" x="0.0" y="103" width="412" height="30"/>
                                         <state key="normal" title="Add Movie"/>
+                                        <connections>
+                                            <action selector="addMovieButton:" destination="fz2-Wh-h6a" eventType="touchUpInside" id="MMl-Of-Gdy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -116,6 +125,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lHh-eG-HWk"/>
+                    <connections>
+                        <outlet property="movieTextField" destination="M0N-4x-uyX" id="PCu-WC-BhK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyH-kZ-DuP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
